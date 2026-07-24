@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cày Thuê Game</title>
-    <!-- Import font chữ -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -26,12 +25,10 @@
             width: 100%;
         }
 
-        /* Khối chứa mỗi phần danh mục */
         .section-block {
             margin-bottom: 50px;
         }
 
-        /* Title Header */
         .header-title {
             text-align: center;
             font-size: 28px;
@@ -43,10 +40,9 @@
         }
 
         .header-title .highlight {
-            color: #7c3aed; /* Màu tím đặc trưng cho chữ BLOX FRUIT / GROW A GARDEN */
+            color: #7c3aed;
         }
 
-        /* Đường gạch ngang nhỏ trang trí dưới tiêu đề */
         .header-title::after {
             content: '';
             display: block;
@@ -57,10 +53,9 @@
             border-radius: 2px;
         }
 
-        /* Grid Layout */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Cố định 4 cột trên màn hình lớn */
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
@@ -76,7 +71,6 @@
             }
         }
 
-        /* Card Item */
         .card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -94,14 +88,13 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Thumbnail Image Container */
         .card-img-container {
             width: 100%;
             height: 180px;
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 15px;
-            background-color: #f8fafc;
+            background-color: #0d0e12;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,10 +103,9 @@
         .card-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Dùng contain để ảnh Game Pass dạng tròn hiển thị đẹp không bị mất góc */
+            object-fit: cover;
         }
 
-        /* Content inside Card */
         .card-title {
             font-size: 16px;
             font-weight: 900;
@@ -126,11 +118,10 @@
         .card-status {
             font-size: 13px;
             font-weight: 700;
-            color: #10b981; /* Green status color */
+            color: #10b981;
             margin-bottom: 15px;
         }
 
-        /* Custom Button */
         .btn-view {
             width: 100%;
             padding: 10px 0;
@@ -146,9 +137,9 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: opacity 0.2s ease;
             text-decoration: none;
-            margin-top: auto; /* Đẩy nút xuống dưới cùng */
+            margin-top: auto;
+            transition: opacity 0.2s ease;
         }
 
         .btn-view:hover {
@@ -160,7 +151,7 @@
 
     <div class="container">
 
-        <!-- ================= MỤC 1: CÀY THUÊ GROW A GARDEN 2 ================= -->
+        <!-- ================= MỤC: CÀY THUÊ GROW A GARDEN 2 ================= -->
         <div class="section-block">
             <h1 class="header-title">
                 CÀY THUÊ <span class="highlight">GROW A GARDEN 2</span> 🌱 🍇 🪓
@@ -168,69 +159,45 @@
 
             <div class="card-grid">
 
-                <!-- Card 1 -->
+                <!-- 1. HẠT GIỐNG -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="https://example.com/2aOboQmcfdSG4ZASxxxvFyF0ir3VYDkJeYhUQDVQ.jpg" alt="seed">
+                        <img src="https://i.ibb.co/0pvKfSf7/image.jpg" alt="Hạt Giống">
                     </div>
                     <div class="card-title">HẠT GIỐNG</div>
                     <div class="card-status">Sẵn Sàng</div>
                     <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- 2. PET (BLACK DRAGON) -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="images/pet.png" alt="Pet">
+                        <img src="https://i.ibb.co/kVhFrv3Z/image.jpg" alt="Pet">
                     </div>
                     <div class="card-title">PET</div>
                     <div class="card-status">Sẵn Sàng</div>
                     <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- 3. TIỀN GAME -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="images/tien-game.png" alt="Tiền Game">
+                        <img src="https://i.ibb.co/j9hvC6wn/image.jpg" alt="Tiền Game">
                     </div>
                     <div class="card-title">TIỀN GAME</div>
                     <div class="card-status">Sẵn Sàng</div>
                     <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- 4. SHOP GEAR -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="2aOboQmcbep0Y93YDJkC0iyJTU8irm9STNk5oULo.jpg" alt="Shop-Gear">
+                        <img src="https://i.ibb.co/XZFQjB38/image.jpg" alt="Shop Gear">
                     </div>
                     <div class="card-title">SHOP GEAR</div>
                     <div class="card-status">Sẵn Sàng</div>
                     <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
                 </div>
-
-            </div>
-        </div>
-
-
-        <!-- ================= MỤC 2: CÀY THUÊ BLOX FRUIT ================= -->
-        <div class="section-block">
-            <h1 class="header-title">
-                CÀY THUÊ <span class="highlight">BLOX FRUIT</span>
-            </h1>
-
-            <div class="card-grid">
-
-                <!-- Card Blox Fruit 1 -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <img src="images/game-pass-blox-fruit.png" alt="Cày Thuê Game Pass">
-                    </div>
-                    <div class="card-title">CÀY THUÊ GAME PASS</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
-                </div>
-
-                <!-- Nếu sau này bạn muốn thêm các dịch vụ khác của Blox Fruit (như cày Cấp, cày Beli,...), chỉ cần copy thêm các đoạn <div class="card">...</div> vào đây -->
 
             </div>
         </div>
