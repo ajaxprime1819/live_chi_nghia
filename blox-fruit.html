@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cày Thuê Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
 
+        body {
+            background-color: #f3f5f8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .section-block {
+            margin-bottom: 50px;
+        }
+
+        .header-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: #1e1135;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .header-title .highlight {
+            color: #7c3aed;
+        }
+
+        .header-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #1e1135;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img-container a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #1a202c;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .card-status {
+            font-size: 13px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 15px;
+        }
+
+        .btn-view {
+            width: 100%;
+            padding: 10px 0;
+            background: linear-gradient(180deg, #2c1a32 0%, #170d1e 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            margin-top: auto;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-view:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ================= MỤC 1: GROW A GARDEN 2 ================= -->
+        <div class="section-block">
+            <h1 class="header-title">
+                CÀY THUÊ <span class="highlight">GROW A GARDEN 2</span> 🌱 🍇 🪓
+            </h1>
+
+            <div class="card-grid">
+
+                <!-- 1. HẠT GIỐNG -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/0pvKfSf7" target="_blank">
+                            <img src="https://i.ibb.co/0pvKfSf7/image.jpg" alt="Hạt Giống">
+                        </a>
+                    </div>
+                    <div class="card-title">HẠT GIỐNG</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <!-- Thay duong-dan-hat-giong.html bằng link của bạn -->
+                    <a href="duong-dan-hat-giong.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- 2. PET (BLACK DRAGON) -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/kVhFrv3Z" target="_blank">
+                            <img src="https://i.ibb.co/kVhFrv3Z/image.jpg" alt="Pet Black Dragon">
+                        </a>
+                    </div>
+                    <div class="card-title">PET</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="duong-dan-pet.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- 3. TIỀN GAME -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/j9hvC6wn" target="_blank">
+                            <img src="https://i.ibb.co/j9hvC6wn/image.jpg" alt="Tiền Game">
+                        </a>
+                    </div>
+                    <div class="card-title">TIỀN GAME</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="duong-dan-tien-game.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- 4. SHOP GEAR -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/XZFQjB38" target="_blank">
+                            <img src="https://i.ibb.co/XZFQjB38/image.jpg" alt="Shop Gear">
+                        </a>
+                    </div>
+                    <div class="card-title">SHOP GEAR</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="duong-dan-shop-gear.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= MỤC 2: BLOX FRUIT ================= -->
+        <div class="section-block">
+            <h1 class="header-title">
+                CÀY THUÊ <span class="highlight">BLOX FRUIT</span>
+            </h1>
+
+            <div class="card-grid">
+
+                <!-- 1. CÀY THUÊ GAME PASS -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/rKdSsW2v" target="_blank">
+                            <img src="https://i.ibb.co/rKdSsW2v/image.jpg" alt="Cày Thuê Game Pass">
+                        </a>
+                    </div>
+                    <div class="card-title">CÀY THUÊ GAME PASS</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="duong-dan-gamepass.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- 2. SELL GAMEPASS, PERM -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/35mBmz7c" target="_blank">
+                            <img src="https://i.ibb.co/35mBmz7c/image.jpg" alt="Sell Gamepass, Perm">
+                        </a>
+                    </div>
+                    <div class="card-title">SELL GAMEPASS, PERM</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="duong-dan-perm.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- 3. SELL TRÁI RƯƠNG -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="https://ibb.co/3XwJLjM" target="_blank">
+                            <img src="https://i.ibb.co/3XwJLjM/image.jpg" alt="Sell Trái Rương">
+                        </a>
+                    </div>
+                    <div class="card-title">SELL TRÁI RƯƠNG</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="duong-dan-trai-ruong.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
