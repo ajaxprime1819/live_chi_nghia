@@ -179,3 +179,244 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cày Thuê Game</title>
+    <!-- Import font chữ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f3f5f8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Khối chứa mỗi phần danh mục */
+        .section-block {
+            margin-bottom: 50px;
+        }
+
+        /* Title Header */
+        .header-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: #1e1135;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .header-title .highlight {
+            color: #7c3aed; /* Màu tím đặc trưng cho chữ BLOX FRUIT / GROW A GARDEN */
+        }
+
+        /* Đường gạch ngang nhỏ trang trí dưới tiêu đề */
+        .header-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #1e1135;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Cố định 4 cột trên màn hình lớn */
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card Item */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Thumbnail Image Container */
+        .card-img-container {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Dùng contain để ảnh Game Pass dạng tròn hiển thị đẹp không bị mất góc */
+        }
+
+        /* Content inside Card */
+        .card-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #1a202c;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .card-status {
+            font-size: 13px;
+            font-weight: 700;
+            color: #10b981; /* Green status color */
+            margin-bottom: 15px;
+        }
+
+        /* Custom Button */
+        .btn-view {
+            width: 100%;
+            padding: 10px 0;
+            background: linear-gradient(180deg, #2c1a32 0%, #170d1e 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+            text-decoration: none;
+            margin-top: auto; /* Đẩy nút xuống dưới cùng */
+        }
+
+        .btn-view:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ================= MỤC 1: CÀY THUÊ GROW A GARDEN 2 ================= -->
+        <div class="section-block">
+            <h1 class="header-title">
+                CÀY THUÊ <span class="highlight">GROW A GARDEN 2</span> 🌱 🍇 🪓
+            </h1>
+
+            <div class="card-grid">
+
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="images/hat-giong.png" alt="Hạt Giống">
+                    </div>
+                    <div class="card-title">HẠT GIỐNG</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="images/pet.png" alt="Pet">
+                    </div>
+                    <div class="card-title">PET</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="images/tien-game.png" alt="Tiền Game">
+                    </div>
+                    <div class="card-title">TIỀN GAME</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="images/shop-gear.png" alt="Shop Gear">
+                    </div>
+                    <div class="card-title">SHOP GEAR</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ================= MỤC 2: CÀY THUÊ BLOX FRUIT ================= -->
+        <div class="section-block">
+            <h1 class="header-title">
+                CÀY THUÊ <span class="highlight">BLOX FRUIT</span>
+            </h1>
+
+            <div class="card-grid">
+
+                <!-- Card Blox Fruit 1 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="images/game-pass-blox-fruit.png" alt="Cày Thuê Game Pass">
+                    </div>
+                    <div class="card-title">CÀY THUÊ GAME PASS</div>
+                    <div class="card-status">Sẵn Sàng</div>
+                    <a href="#" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                </div>
+
+                <!-- Nếu sau này bạn muốn thêm các dịch vụ khác của Blox Fruit (như cày Cấp, cày Beli,...), chỉ cần copy thêm các đoạn <div class="card">...</div> vào đây -->
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
