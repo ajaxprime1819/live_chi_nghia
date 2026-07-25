@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giao Diện Danh Mục Dịch Vụ - C.Nghĩa (có hiệu ứng tuyết)</title>
+    <title>Giao Diện Danh Mục Dịch Vụ - C.Nghĩa (Có hiệu ứng tuyết)</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -19,12 +19,64 @@
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            /* Đảm bảo tuyết không làm xuất hiện thanh cuộn ngang */
+            overflow-x: hidden; 
+            position: relative;
+            min-height: 100vh;
         }
 
         .main-wrapper {
             max-width: 1100px;
             width: 100%;
+            /* Đảm bảo nội dung nằm trên lớp tuyết */
+            position: relative; 
+            z-index: 10; 
         }
+
+        /* ================= CSS HIỆU ỨNG TUYẾT RƠI ================= */
+        .snowflake {
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px rgba(255,255,255,1);
+            position: fixed;
+            top: -10%;
+            z-index: 1; /* Nằm dưới z-index của .main-wrapper */
+            user-select: none;
+            cursor: default;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running;
+        }
+
+        /* Định nghĩa chuyển động rơi xuống */
+        @keyframes snowflakes-fall {
+            0% { top: -10%; }
+            100% { top: 100%; }
+        }
+
+        /* Định nghĩa chuyển động lắc lư sang hai bên */
+        @keyframes snowflakes-shake {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(80px); }
+        }
+
+        /* Tạo các biến thể ngẫu nhiên cho từng hạt tuyết bằng CSS (Sẽ được JS sử dụng) */
+        .snowflake:nth-of-type(0) { left: 1%; animation-delay: 0s, 0s; }
+        .snowflake:nth-of-type(1) { left: 10%; animation-delay: 1s, 1s; }
+        .snowflake:nth-of-type(2) { left: 20%; animation-delay: 6s, 0.5s; }
+        .snowflake:nth-of-type(3) { left: 30%; animation-delay: 4s, 2s; }
+        .snowflake:nth-of-type(4) { left: 40%; animation-delay: 2s, 2s; }
+        .snowflake:nth-of-type(5) { left: 50%; animation-delay: 8s, 3s; }
+        .snowflake:nth-of-type(6) { left: 60%; animation-delay: 6s, 2s; }
+        .snowflake:nth-of-type(7) { left: 70%; animation-delay: 2.5s, 1s; }
+        .snowflake:nth-of-type(8) { left: 80%; animation-delay: 1s, 0s; }
+        .snowflake:nth-of-type(9) { left: 90%; animation-delay: 3s, 1.5s; }
+        .snowflake:nth-of-type(10) { left: 25%; animation-delay: 2s, 0s; }
+        .snowflake:nth-of-type(11) { left: 65%; animation-delay: 4s, 1s; }
+        /* ========================================================= */
 
         /* HEADER & LOGO C.NGHĨA */
         .brand-header {
@@ -119,6 +171,9 @@
             align-items: center;
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            /* Đảm bảo nội dung card nằm trên tuyết nếu body có relative */
+            position: relative; 
+            z-index: 11;
         }
 
         .service-card:hover {
@@ -182,6 +237,9 @@
     </style>
 </head>
 <body>
+
+    <!-- Container chứa các hạt tuyết (Sẽ được JS điền vào) -->
+    <div id="snow-container"></div>
 
     <div class="main-wrapper">
 
@@ -293,7 +351,6 @@
                 </div>
                 <div class="card-title">CHUNG SỨC LIÊN QUÂN</div>
                 <div class="card-status">Sẵn Sàng</div>
-                <!-- ĐÃ THÊM LINK 1 VÀO ĐÂY -->
                 <a href="https://blog.chungsucliqi.gt.tc" class="btn-view-all">XEM TẤT CẢ &rarr;</a>
             </div>
 
@@ -304,12 +361,44 @@
                 </div>
                 <div class="card-title">XU TIKTOK GIÁ RẺ</div>
                 <div class="card-status">Sẵn Sàng</div>
-                <!-- ĐÃ THÊM LINK 2 VÀO ĐÂY -->
                 <a href="https://example.com/xutiktok" class="btn-view-all">XEM TẤT CẢ &rarr;</a>
             </div>
         </div>
 
     </div>
+
+    <!-- JAVASCRIPT ĐỂ TẠO HẠT TUYẾT -->
+    <script>
+        function createSnowflakes() {
+            const container = document.getElementById('snow-container');
+            const numberOfSnowflakes = 50; // Số lượng hạt tuyết
+            const snowflakeChar = '❄'; // Ký tự hạt tuyết
+
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = snowflakeChar;
+                
+                // Thiết lập các thuộc tính ngẫu nhiên bằng JS để tăng tính tự nhiên
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.fontSize = (Math.random() * 1.5 + 0.5) + 'em'; // Kích thước ngẫu nhiên
+                snowflake.style.opacity = Math.random() * 0.7 + 0.3; // Độ mờ ngẫu nhiên
+
+                // Thời gian rơi và lắc lư ngẫu nhiên
+                const fallDuration = Math.random() * 10 + 10 + 's';
+                const shakeDuration = Math.random() * 3 + 2 + 's';
+                const delay = Math.random() * 10 + 's';
+
+                snowflake.style.animationDuration = `${fallDuration}, ${shakeDuration}`;
+                snowflake.style.animationDelay = `${delay}, ${delay}`;
+
+                container.appendChild(snowflake);
+            }
+        }
+
+        // Chạy hàm tạo tuyết khi trang đã tải xong
+        window.onload = createSnowflakes;
+    </script>
 
 </body>
 </html>
